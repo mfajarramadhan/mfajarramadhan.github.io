@@ -181,8 +181,11 @@ section {
 /* Home */
 .container-dua {
     padding-top: 115px;
-    padding-bottom: 90px;
-    height: 225px;
+    margin-bottom: -160px;
+    height: 505px;
+    background-image: url(.//image/showcase.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .profile {
@@ -203,8 +206,9 @@ section {
     transition: all .3s;
     /* rgb(47, 255, 61); */
     box-shadow:
-        0px 0px 0px 3px black,
+        0px 0px 0px 3px white,
         0px 0px 0px 4px red,
+        0px 0px 0px 5px red,
         0px 0px 10px 6px rgba(0, 0, 0, .3);
 }
 
@@ -214,20 +218,22 @@ section {
 
 .profile2:hover img {
     box-shadow:
-        0px 0px 0px 3px rgba(0, 0, 0, 1),
+        0px 0px 0px 3px rgba(255, 255, 255, 1),
         0px 0px 0px 4px red,
+        0px 0px 0px 5px red,
         0px 0px 10px 6px rgba(0, 0, 0, .6);
 }
 
 .profile .content {
     text-align: center;
-    color: black;
+    color: white;
     font-size: 1.4em;
     transition: all .3s;
     text-shadow:
         0 1px red,
         -1px 0 red,
-        -1px 1px red;
+        -1px 1px red,
+        -2px 2px red;
 }
 
 .profile .content h1 {
@@ -241,6 +247,7 @@ section {
 
 /* End Home */
 
+
 /* About */
 .container-tiga {
     background-color: black;
@@ -250,9 +257,9 @@ section {
     justify-content: center;
     text-align: justify;
     flex-wrap: wrap;
-    margin: 30px 10px 110px 10px;
+    margin: 90px 10px 0 10px;
     letter-spacing: .7px;
-    border: 2px solid red;
+    border: 2px solid white;
     box-shadow: inset 0 0 10px 5px rgba(255, 255, 255, .3);
 }
 
@@ -286,16 +293,17 @@ section {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 45px 0 -100px 0;
 }
 
 .container-empat .box {
-    width: 45%;
+    width: 40%;
     height: 195px;
     background-color: black;
     border: 2px solid white;
     box-shadow: 0px 0px 5px 1px rgb(0, 0, 0, .5);
     color: white;
-    margin: 10px;
+    margin: 20px;
     border-radius: 5px;
     box-sizing: border-box;
     text-align: center;
@@ -311,13 +319,13 @@ section {
     font-weight: bold;
 }
 
-.container-empat:hover .box {
+.container-empat .box:hover {
     box-shadow:
         0px 0px 7px 1px rgb(0, 0, 0, .8),
         inset 0 0 10px 5px rgba(255, 255, 255, .3);
 }
 
-.container-empat:hover span {
+.container-empat .box:hover span {
     text-shadow: 1px 1px 1px red;
 }
 
@@ -421,16 +429,18 @@ section {
     justify-content: center;
     flex-wrap: wrap;
     color: white;
+    margin-top: 45px;
+    margin-bottom: -100px;
 }
 
 .card {
-    width: 31%;
+    width: 30%;
     background-color: black;
     margin: 10px auto;
     border: 2px solid white;
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .4);
     box-sizing: border-box;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
 }
 
@@ -573,10 +583,6 @@ div.sosmed {
     margin-top: 15px;
 }
 
-div.sosmed:hover {
-    background-color: rgba(255, 255, 255, 0.801)
-}
-
 .logo {
     margin-top: 3px;
 }
@@ -644,7 +650,7 @@ footer .copyright p {
     .profile img {
         width: 250px;
         height: 300px;
-        margin-top: 100px;
+        margin-top: -150px;
     }
 
     .profile .content {
@@ -654,7 +660,8 @@ footer .copyright p {
 
     /* About */
     .container-tiga {
-        margin-top: 0;
+        margin-top: 40px;
+        margin-bottom: -100px;
     }
 
 
@@ -733,7 +740,8 @@ footer .copyright p {
 
     /* Home */
     .container-dua {
-        padding-top: 190px;
+        margin-top: -250px;
+        height: 700px;
     }
 
     .profile {
@@ -766,7 +774,7 @@ footer .copyright p {
     /* Education */
     .container-empat {
         display: block;
-        width: 213%;
+        width: 238%;
         margin-top: 30px;
     }
 
