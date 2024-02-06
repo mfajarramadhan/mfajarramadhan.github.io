@@ -10,7 +10,7 @@ gsap.from('.profile2 img', { duration: 1.2, rotateY: 780 });
 
 // GSAP Text Plugin
 gsap.registerPlugin(TextPlugin);
-gsap.to('.typing', { duration: 1.7, delay: 1.5, text: 'Junior Web Developer | UI/UX Designer' });
+gsap.to('.typing', { duration: 1.7, delay: 1.5, text: 'Web Developer | UI/UX Designer' });
 gsap.from('.content h1', { duration: 1.5, x: -50, opacity: 0, delay: .3, ease: 'back' });
 gsap.from('nav', { duration: 1.5, y: '-100%', opacity: 0, ease: 'bounce' });
 
