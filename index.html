@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <!-- Head Icon -->
+    <link rel="icon" href="src/img/mfr.png" />
+
+    <!-- Cek class dark di localstorage -->
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+
+  <body class="cursor-default">
+    <!-- Header Start -->
+    <header
+      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10 py-2 lg:py-0"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <!-- Left Side -->
+          <div class="px-4">
+            <a
+              href="#home"
+              class="block transition-all font-bold text-lg text-primary italic hover:scale-110 hover:text-semiDark2 hover:-rotate-[0.5deg]"
+              ><span class="text-dark dark:text-light">Muh_</span>Fajar</a
+            >
+          </div>
+
+          <!-- Right Side -->
+
+          <!-- Hamburger Menu -->
+          <div class="flex items-center px-4">
+            <button
+              type="button"
+              name="hamburger"
+              id="hamburger"
+              class="block absolute right-4 lg:hidden"
+            >
+              <span class="hamburger-line origin-top-left"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line origin-bottom-left"></span>
+            </button>
+
+            <!-- Navbar -->
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 bg-light opacity-95 shadow-lg rounded-lg max-w-64 w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:py-2 dark:bg-dark dark:shadow-slate-500 lg:dark:bg-transparent"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-light"
+                    >Home</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#about"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-light"
+                    >About</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#portfolio"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-light"
+                    >Projects</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#experience"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-light"
+                    >Experience</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#contact"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-light"
+                    >Contact</a
+                  >
+                </li>
+                <li class="flex items-center -ml-3 pl-8 lg:mt-0">
+                  <div class="flex items-center">
+                    <!-- <span class="mr-2 text-sm text-slate-500">Light</span> -->
+                    <!-- Light -->
+                    <svg
+                      width="512"
+                      height="512"
+                      viewBox="0 0 512 512"
+                      style="color: currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-9 w-9"
+                    >
+                      <rect
+                        width="512"
+                        height="512"
+                        x="0"
+                        y="0"
+                        rx="30"
+                        fill="transparent"
+                        stroke="transparent"
+                        stroke-width="0"
+                        stroke-opacity="100%"
+                        paint-order="stroke"
+                      ></rect>
+                      <svg
+                        width="256px"
+                        height="256px"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        x="128"
+                        y="128"
+                        role="img"
+                        style="display: inline-block; vertical-align: middle"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="currentColor">
+                          <path
+                            class="dark:text-light"
+                            fill="currentColor"
+                            d="M12 18.09A6.09 6.09 0 1 1 18.09 12A6.1 6.1 0 0 1 12 18.09Zm0-11.18A5.09 5.09 0 1 0 17.09 12A5.1 5.1 0 0 0 12 6.91Zm-.5-4.342v1.6a.5.5 0 1 0 1 0v-1.6a.5.5 0 1 0-1 0Zm1 18.864v-1.6a.5.5 0 0 0-1 0v1.6a.5.5 0 1 0 1 0Zm8.932-9.932h-1.6a.5.5 0 0 0 0 1h1.6a.5.5 0 1 0 0-1Zm-18.864 1h1.6a.5.5 0 1 0 0-1h-1.6a.5.5 0 1 0 0 1Zm15.748-7.523l-.992.992l-.141.141a.514.514 0 0 0-.146.353a.508.508 0 0 0 .146.354a.5.5 0 0 0 .354.146a.515.515 0 0 0 .353-.146l.992-.992l.141-.141a.515.515 0 0 0 .147-.354a.508.508 0 0 0-.147-.353a.5.5 0 0 0-.353-.147a.522.522 0 0 0-.354.147ZM5.684 19.023l.992-.992l.141-.141a.514.514 0 0 0 .146-.353a.508.508 0 0 0-.146-.354a.5.5 0 0 0-.354-.146a.515.515 0 0 0-.353.146l-.992.992l-.141.141a.515.515 0 0 0-.147.354a.508.508 0 0 0 .147.353a.5.5 0 0 0 .353.147a.522.522 0 0 0 .354-.147Zm13.339-.707l-.992-.992l-.141-.141a.514.514 0 0 0-.353-.146a.508.508 0 0 0-.354.146a.5.5 0 0 0-.146.354a.515.515 0 0 0 .146.353l.992.992l.141.141a.515.515 0 0 0 .354.147a.508.508 0 0 0 .353-.147a.5.5 0 0 0 .147-.353a.522.522 0 0 0-.147-.354ZM4.977 5.684l.992.992l.141.141a.514.514 0 0 0 .353.146a.508.508 0 0 0 .354-.146a.5.5 0 0 0 .146-.354a.515.515 0 0 0-.146-.353l-.992-.992l-.141-.141a.515.515 0 0 0-.354-.147a.508.508 0 0 0-.353.147a.5.5 0 0 0-.147.353a.522.522 0 0 0 .147.354Z"
+                          />
+                        </g>
+                      </svg>
+                    </svg>
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-secondary p-1 dark:bg-primary"
+                      >
+                        <div
+                          class="toggle-circle h-4 w-4 rounded-full bg-light transition duration-300"
+                        ></div>
+                      </div>
+                    </label>
+                    <!-- <span class="ml-2 text-sm text-slate-500">Dark</span> -->
+                    <!-- Dark -->
+                    <svg
+                      width="512"
+                      height="512"
+                      viewBox="0 0 512 512"
+                      style="color: currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-8 w-8"
+                    >
+                      <rect
+                        width="512"
+                        height="512"
+                        x="0"
+                        y="0"
+                        rx="30"
+                        fill="transparent"
+                        stroke="transparent"
+                        stroke-width="0"
+                        stroke-opacity="100%"
+                        paint-order="stroke"
+                      ></rect>
+                      <svg
+                        width="256px"
+                        height="256px"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        x="128"
+                        y="128"
+                        role="img"
+                        style="display: inline-block; vertical-align: middle"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g fill="currentColor">
+                          <path
+                            class="dark:text-light"
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M11.486 4.768a7.25 7.25 0 1 0 7.399 9.51a6.25 6.25 0 0 1-7.398-9.51ZM3.25 12a8.75 8.75 0 0 1 10.074-8.65a.75.75 0 0 1 .336 1.342a4.75 4.75 0 1 0 5.83 7.499a.75.75 0 0 1 1.22.654A8.751 8.751 0 0 1 3.25 12Z"
+                            clip-rule="evenodd"
+                          />
+                        </g>
+                      </svg>
+                    </svg>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Start -->
+    <section id="home" class="pt-16 dark:bg-slate-800">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <!-- Left Side -->
+          <div class="w-full self-center px-4 lg:w-1/2 dark:text-light">
+            <h1 class="text-base font-semibold md:text-xl">
+              <span class="text-primary">Hello<span class="inline-block hover:scale-125 hover:rotate-12 hover:-translate-y-1 hover:translate-x-[0.2rem] transition duration-300">👋</span></span> I am
+              <span class="block font-bold text-dark text-4xl dark:text-light"
+                >Muhammad <span class="text-primary inline-block hover:scale-110 transition duration-200">Fajar</span> Ramadhan</span
+              >
+            </h1>
+            <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">
+              Fullstack Web Developer |
+              <span class="text-dark dark:text-light">UI/UX Designer</span>
+            </h2>
+            <p
+              class="font-medium text-secondary mb-10 leading leading-relaxed lg:text-lg"
+            >
+              Knowing by
+              <span class="text-dark font-bold dark:text-light">Learning</span>,
+              Learning by
+              <span class="text-dark font-bold dark:text-light">Doing</span>
+            </p>
+            <button
+              class="relative inline-block group bg-gradient-to-b from-semiDark via-primary to-semiDark hover:from-semiDark2 hover:via-primary hover:to-semiDark2 hover:text-light hover:scale-110 py-2 px-5 rounded-full hover:shadow-md hover:shadow-silver transition duration-200 text-slate-100 text-base dark:shadow-slate-600"
+              name=""
+            >
+              <a href="#about">Contact Me
+                <!-- Underline Animation -->
+              <span class="block -mt-[4px] mb-[3px] h-[0.1rem] bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+              </a>
+            </button>
+          </div>
+
+          <!-- Right Side -->
+          <div class="w-full self-end px-4 lg:w-1/2">
+            <div class="relative mt-10 lg:mt-9 lg:right-0 group">
+              <img
+                src="src/img/myself.png"
+                width="350"
+                alt="Fajar"
+                class="max-w-full mx-auto relative z-10"
+              />
+              <span
+                class="absolute top-0 left-1/2 -translate-x-1/2 md:scale-105 group-hover:scale-125 md:group-hover:scale-125 transition-all duration-500"
+              >
+                <svg
+                  width="350"
+                  height="350"
+                  viewBox="0 0 200 200"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="#dc2626"
+                    d="M55.4,-2.5C55.4,26.4,27.7,52.8,-0.5,52.8C-28.6,52.8,-57.2,26.4,-57.2,-2.5C-57.2,-31.4,-28.6,-62.8,-0.5,-62.8C27.7,-62.8,55.4,-31.4,55.4,-2.5Z"
+                    transform="translate(100 100)"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Section Start -->
+    <section id="about" class="pt-36 pb-32 dark:bg-slate-800">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <!-- Left Side -->
+          <div class="w-full px-4 mb-10 lg:w-1/2">
+            <h4 class="font-bold uppercase text-primary text-lg">About Me</h4>
+            <h3
+              class="font-bold text-dark text-3xl mb-4 max-w-md lg:text-4xl dark:text-light"
+            >
+              Self Description
+            </h3>
+            <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">
+              I'm a student of Horizon University Indonesia majoring in
+              Information System. I have been interested in programming since the first time I tried it. Now, my goals is to become a Web Developer especially as Fullstack Web
+              Developer.
+            </p>
+          </div>
+
+          <!-- Right Side -->
+          <div class="w-full px-4 mb-10 lg:w-1/2 lg:pt-6">
+            <h3
+              class="font-bold text-dark text-3xl mb-4 max-w-md lg:text-4xl dark:text-light"
+            >
+              Let's Connect!
+            </h3>
+            <p class="font-medium text-base text-secondary mb-5 lg:text-lg">
+              If you want to know more about me, you can get in touch and conect
+              with me throught my social media bellow.
+            </p>
+            <!-- Sosmed -->
+            <div class="flex items-center">
+              <!-- LinkedIn -->
+              <a
+                href="https://www.linkedin.com/in/muhammad-fajar-ramadhan-908aa2278?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                class="w-9 h-9 flex justify-center items-center rounded-full mr-3 text-secondary border border-x-primary border-y-dark hover:border-dark dark:border-x-primary dark:border-y-light dark:hover:border-light hover:text-white hover:bg-primary"
+                target="_blank"
+              >
+                <svg
+                  class="fill-current"
+                  width="20"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>LinkedIn</title>
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+              <!-- Instagram -->
+              <a
+                href="https://instagram.com/mfajarr25"
+                class="w-9 h-9 flex justify-center items-center rounded-full mr-3 text-secondary border border-x-primary border-y-dark hover:border-dark dark:border-x-primary dark:border-y-light dark:hover:border-light hover:text-white hover:bg-primary"
+                target="_blank"
+              >
+                <svg
+                  class="fill-current"
+                  width="20"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Instagram</title>
+                  <path
+                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"
+                  />
+                </svg>
+              </a>
+              <!-- Facebook -->
+              <a
+                href="https://www.facebook.com/kim.ara.moon.75248?mibextid=ZbWKwL"
+                class="w-9 h-9 flex justify-center items-center rounded-full mr-3 text-secondary border border-x-primary border-y-dark hover:border-dark dark:border-x-primary dark:border-y-light dark:hover:border-light hover:text-white hover:bg-primary"
+                target="_blank"
+              >
+                <svg
+                  class="fill-current"
+                  width="20"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Facebook</title>
+                  <path
+                    d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"
+                  />
+                </svg>
+              </a>
+              <!-- WhatsApp -->
+              <a
+                href="http://wa.me/62895333530959"
+                class="w-9 h-9 flex justify-center items-center rounded-full mr-3 text-secondary border border-x-primary border-y-dark hover:border-dark dark:border-x-primary dark:border-y-light dark:hover:border-light hover:text-white hover:bg-primary"
+                target="_blank"
+              >
+                <svg
+                  class="fill-current"
+                  width="20"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>WhatsApp</title>
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  />
+                </svg>
+              </a>
+              <!-- Gmail -->
+              <a
+                href="mailto:mfajarramadhan04@gmail.com/"
+                class="w-9 h-9 flex justify-center items-center rounded-full mr-3 text-secondary border border-x-primary border-y-dark hover:border-dark dark:border-x-primary dark:border-y-light dark:hover:border-light hover:text-white hover:bg-primary"
+                target="_blank"
+              >
+                <svg
+                  class="fill-current"
+                  width="20"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Gmail</title>
+                  <path
+                    d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                  />
+                </svg>
+              </a>
+              <!-- Github -->
+              <a
+                href="https://github.com/mfajarramadhan"
+                class="w-9 h-9 flex justify-center items-center rounded-full mr-3 text-secondary border border-x-primary border-y-dark hover:border-dark dark:border-x-primary dark:border-y-light dark:hover:border-light hover:text-white hover:bg-primary"
+                target="_blank"
+              >
+                <svg
+                  class="fill-current"
+                  width="20"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>GitHub</title>
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Waves -->
+      <!-- <div class="relative -mt-10">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="bg-light dark:bg-slate-800 absolute top-0"><path id="waves" fill="#0f172a" fill-opacity="1" d="M0,128L80,154.7C160,181,320,235,480,261.3C640,288,800,288,960,261.3C1120,235,1280,181,1360,154.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+      </div> -->
+    </section>
+    <!-- About Section End -->
+
+    <!-- Portfolio Section Start -->
+    <section id="portfolio" class="pt-36 pb-16 bg-slate-100 dark:bg-dark">
+      <div class="container">
+        <!-- header -->
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="font-semibold text-lg text-primary mb-2">Projects</h4>
+            <h2 class="font-bold text-dark text-3xl mb-4 dark:text-light">
+              Recently Projects
+            </h2>
+            <p class="font-medium text-md text-secondary">
+              These are projects I have made and contributed so far. Check all
+              projects and the source code on my github
+            </p>
+          </div>
+        </div>
+        <!-- projects -->
+        <div class="w-full px-4 flex flex-wrap justify-center">
+          <!-- Add New Project -->
+          <div class="mb-12 p-4 md:w-1/2">
+            <div
+              class="cursor-pointer shadow-silver bg-red-50 rounded-md shadow-lg overflow-hidden dark:shadow-slate-600 md:h-32 lg:h-60 hover:scale-105 transition duration-300"
+            >
+              <a href="https://github.com/mfajarramadhan/back-end-app-restful-api.git" target="_blank">
+                <img src="src/img/projects/notes-api.png" alt="Notes Apps" width="w-full" />
+              </a>
+            </div>
+            <h3
+              class="cursor-pointer font-semibold hover:text-primary dark:hover:text-primary  text-xl text-dark mb-3 mt-5 dark:text-light relative inline-block group"
+            ><a href="https://github.com/mfajarramadhan/back-end-app-restful-api.git" target="_blank">Notes Apps</a>
+              <!-- Underline Animation -->
+              <span class="block -mt-[2px] mb-[2px] h-[0.1rem] bg-dark dark:bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+            </h3>
+            <p class="text-slate-500">
+              Dicoding Submission to create a simple Notes Apps using Node.js
+              and Hapi.js framework
+            </p>
+          </div>
+          <!-- Add New Project -->
+          <div class="mb-12 p-4 md:w-1/2">
+            <div
+              class="cursor-pointer shadow-silver bg-red-50 rounded-md shadow-lg overflow-hidden dark:shadow-slate-600 md:h-32 lg:h-60 hover:scale-105 transition duration-300"
+            >
+              <a href="https://github.com/mfajarramadhan/public-api.git" target="_blank">
+                <img src="src/img/projects/omdb-api.png" alt="OMDb API" width="w-full" />
+              </a>
+            </div>
+            <h3
+              class="cursor-pointer font-semibold hover:text-primary dark:hover:text-primary  text-xl text-dark mb-3 mt-5 dark:text-light relative inline-block group"
+            ><a href="https://github.com/mfajarramadhan/public-api.git" target="_blank">Public API</a>
+              <!-- Underline Animation -->
+              <span class="block -mt-[2px] mb-[2px] h-[0.1rem] bg-dark dark:bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+            </h3>
+            <p class="text-slate-500">
+              A Simple website to display movie information and details using
+              public API (OMDb API) with Jquery
+            </p>
+          </div>
+
+          <!-- Add New Project -->
+          <div class="mb-12 p-4 md:w-1/2">
+            <div
+              class="cursor-pointer shadow-silver rounded-md shadow-lg overflow-hidden dark:shadow-slate-600 md:h-32 lg:h-60 hover:scale-105 transition duration-300"
+            >
+              <a href="https://github.com/mfajarramadhan/kopi-kenangan.git" target="_blank">
+                <img src="src/img/projects/kedai-kopi.png" alt="Kopi Kenangan" width="w-full" />
+              </a>
+            </div>
+            <h3
+              class="cursor-pointer font-semibold hover:text-primary dark:hover:text-primary  text-xl text-dark mb-3 mt-5 dark:text-light relative inline-block group"
+            ><a href="https://github.com/mfajarramadhan/kopi-kenangan.git" target="_blank">Kopi Kenangan</a>
+              <!-- Underline Animation -->
+              <span class="block -mt-[2px] mb-[2px] h-[0.1rem] bg-dark dark:bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+            </h3>
+            <p class="text-slate-500">
+              A Coffee Shop Website powered by HTML, CSS, and JavaScript with
+              Shopping Cart feature (Alpine.js) and Payment Gateway (Midtrans)
+            </p>
+          </div>
+
+          <!-- Add New Project -->
+          <div class="mb-12 p-4 md:w-1/2">
+            <div
+              class="cursor-pointer shadow-silver rounded-md shadow-lg overflow-hidden dark:shadow-slate-600 md:h-32 lg:h-60 hover:scale-105 transition duration-300"
+            >
+              <a href="https://github.com/mfajarramadhan/mebelverse.git" target="_blank">
+                <img src="src/img/projects/mebelverse.png" alt="Mebelverse" width="w-full" />
+              </a>
+            </div>
+            <h3
+              class="cursor-pointer font-semibold hover:text-primary dark:hover:text-primary  text-xl text-dark mb-3 mt-5 dark:text-light relative inline-block group"
+            ><a href="https://github.com/mfajarramadhan/mebelverse.git" target="_blank">Mebelverse</a>
+              <!-- Underline Animation -->
+              <span class="block -mt-[2px] mb-[2px] h-[0.1rem] bg-dark dark:bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+            </h3>
+            <p class="text-slate-500">
+              Aggregator Digital Website VRVS (Virtual Reality Village for SMEs)
+              for export marketing of batik-patterned bamboo and rattan
+              furniture
+            </p>
+          </div>
+          <!-- Add New Project -->
+          <div class="mb-12 p-4 md:w-1/2">
+            <div
+              class="cursor-pointer shadow-silver rounded-md shadow-lg overflow-hidden dark:shadow-slate-600 md:h-32 lg:h-60 hover:scale-105 transition duration-300"
+            >
+              <a href="https://github.com/mfajarramadhan/smt4-web-programming2/tree/main/tugas-akhir/mvc" target="_blank">
+                <img src="src/img/projects/blk.png" alt="BLK Karawang" width="w-full" />
+              </a>
+            </div>
+            <h3
+              class="cursor-pointer font-semibold hover:text-primary dark:hover:text-primary  text-xl text-dark mb-3 mt-5 dark:text-light relative inline-block group"
+            ><a href="https://github.com/mfajarramadhan/smt4-web-programming2/tree/main/tugas-akhir/mvc" target="_blank">BLK Karawang</a>
+              <!-- Underline Animation -->
+              <span class="block -mt-[2px] mb-[2px] h-[0.1rem] bg-dark dark:bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+            </h3>
+            <p class="text-slate-500">
+              A Website for karawang people to register for job training and
+              improve their skills at Balai Latihan Kerja. Built with PHP (MVC)
+              and MySQL Database
+            </p>
+          </div>
+          <!-- Add New Project -->
+          <div class="mb-12 p-4 md:w-1/2">
+            <div
+              class="cursor-pointer shadow-silver rounded-md shadow-lg overflow-hidden dark:shadow-slate-600 md:h-32 lg:h-60 hover:scale-105 transition duration-300"
+            >
+              <a href="https://github.com/mfajarramadhan/smt3-web-programming/tree/main/tugas-akhir" target="_blank">
+                <img src="src/img/projects/simpeg.png" alt="SIMPEG" width="w-full" />
+              </a>
+            </div>
+            <h3
+              class="cursor-pointer font-semibold hover:text-primary dark:hover:text-primary  text-xl text-dark mb-3 mt-5 dark:text-light relative inline-block group"
+            ><a href="https://github.com/mfajarramadhan/smt3-web-programming/tree/main/tugas-akhir" target="_blank">SIMPEG</a>
+              <!-- Underline Animation -->
+              <span class="block -mt-[2px] mb-[2px] h-[0.1rem] bg-dark dark:bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+            </h3>
+            <p class="text-slate-500">
+              An Information System for managing employee data such as project,
+              salaries, and employee position using PHP Basic (Procedural)
+            </p>
+          </div>
+          <!-- Add New Project -->
+          <div class="mb-12 p-4 md:w-1/2">
+            <div
+              class="cursor-pointer shadow-silver rounded-md shadow-lg overflow-hidden dark:shadow-slate-600 md:h-32 lg:h-60 hover:scale-105 transition duration-300"
+            >
+              <a href="https://github.com/mfajarramadhan/lat-css/tree/main/lat03-grid/perumahan" target="_blank">
+                <img src="src/img/projects/grid.png" alt="E-Commerce Property" width="w-full" />
+              </a>
+            </div>
+            <h3
+              class="cursor-pointer font-semibold hover:text-primary dark:hover:text-primary  text-xl text-dark mb-3 mt-5 dark:text-light relative inline-block group"
+            ><a href="https://github.com/mfajarramadhan/lat-css/tree/main/lat03-grid/perumahan" target="_blank">E-Commerce Property</a>
+              <!-- Underline Animation -->
+              <span class="block -mt-[2px] mb-[2px] h-[0.1rem] bg-dark dark:bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+            </h3>
+            <p class="text-slate-500">
+              E-Commerce Property Website with responsive design using CSS Grid
+              and Flexbox
+            </p>
+          </div>
+          <!-- Add New Project -->
+          <div class="mb-12 p-4 md:w-1/2">
+            <div
+              class="cursor-pointer shadow-silver rounded-md shadow-lg overflow-hidden dark:shadow-slate-600 md:h-32 lg:h-60 hover:scale-105 transition duration-300"
+            >
+              <a href="https://github.com/mfajarramadhan/lat-css/tree/main/lat04-bootstrap" target="_blank">
+                <img src="src/img/projects/bootstrap.png" alt="My First Portfolio" width="w-full" />
+              </a>
+            </div>
+            <h3
+              class="cursor-pointer font-semibold hover:text-primary dark:hover:text-primary  text-xl text-dark mb-3 mt-5 dark:text-light relative inline-block group"
+            ><a href="https://github.com/mfajarramadhan/lat-css/tree/main/lat04-bootstrap" target="_blank">My Portfolio</a>
+              <!-- Underline Animation -->
+              <span class="block -mt-[2px] mb-[2px] h-[0.1rem] bg-dark dark:bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+            </h3>
+            <p class="text-slate-500">
+              My first portfolio website using Bootstrap with responsive design
+              and GSAP for animation
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Section End -->
+
+    <!-- Experience Section Start -->
+    <section id="experience" class="pt-36 pb-16 bg-light dark:bg-slate-800">
+      <div class="container">
+        <!-- header -->
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="font-semibold text-lg text-primary mb-2">Experience</h4>
+            <h2 class="font-bold text-dark text-3xl mb-4 dark:text-light">
+              Work & Organization Experience
+            </h2>
+            <p class="font-medium text-md text-secondary">
+              I have several experiences in works and organizations to increase relationships, connections, and also improve my
+              soft skills and hard skills
+            </p>
+          </div>
+          <!-- Card -->
+          <div class="flex flex-wrap justify-center">
+            <!-- Add New Card -->
+            <div class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div
+                class="bg-light rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-dark dark:shadow-slate-600 hover:scale-105 transition duration-200 dark:hover:shadow-slate-500 hover:shadow-xl"
+              >
+                <div class="h-52 overflow-hidden bg-cover relative group">
+                  <img
+                    src="src/img/experience/pindo.jpg"
+                    alt=""
+                    class="w-full h-full absolute group-hover:scale-125 transition-all duration-300"
+                  />
+                </div>
+                <div class="py-8 px-6">
+                  <h3
+                    class="mb-3 font-semibold text-dark text-xl hover:text-primary truncate dark:text-light"
+                  >
+                    PT. Pindo Deli 2 Pulp & Paper
+                  </h3>
+                  <p class="text-base font-medium text-secondary">
+                    Internship as Human Resource (HR) & Mills Service
+                    Department 
+                  </p>
+                  <p class="mb-6 text-base font-medium text-secondary">
+                    (May 2024 - July 2024)
+                  </p>
+                  <button type="submit" name=""
+                    id="modal-open-btn"
+                    class="relative inline-block font-medium text-light py-1 px-5 bg-gradient-to-b  from-semiDark via-primary to-semiDark hover:from-semiDark2 hover:via-primary hover:to-semiDark2 hover:scale-110 text-sm rounded-md hover:shadow-sm transition duration-100 ease-in-out dark:shadow-slate-600 group"
+                    >Read More &raquo
+                    <!-- Underline Animation -->
+                    <span class="block -mt-[3px] mb-[3px] h-[0.1rem] bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Add New Card -->
+            <div class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div
+                class="bg-light rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-dark dark:shadow-slate-600 hover:scale-105 transition duration-200 dark:hover:shadow-slate-500 hover:shadow-xl"
+              >
+                <div class="h-52 overflow-hidden bg-cover relative group">
+                  <img
+                    src="src/img/experience/dic.jpg"
+                    alt=""
+                    class="w-full h-full absolute group-hover:scale-125 transition-all duration-300"
+                  />
+                </div>
+                <div class="py-8 px-6">
+                  <h3
+                    class="mb-3 font-semibold text-dark text-xl hover:text-primary truncate dark:text-light"
+                  >
+                    PT. DIC Graphics
+                  </h3>
+                  <p class="text-base font-medium text-secondary">
+                    Internship as Health, Safety, Environment (HSE) Department 
+                  </p>
+                  <p class="mb-6 text-base font-medium text-secondary">
+                    (January 2024 - April 2024)
+                  </p>
+                  <button type="submit" name=""
+                    id="modal-open-btn2"
+                    class="relative inline-block group font-medium text-light py-1 px-5 bg-gradient-to-b from-semiDark via-primary to-semiDark hover:from-semiDark2 hover:via-primary hover:to-semiDark2 hover:scale-110 text-sm rounded-md hover:shadow-sm transition duration-100 ease-in-out dark:shadow-slate-600"
+                    >Read More &raquo
+                      <!-- Underline Animation -->
+                    <span class="block -mt-[3px] mb-[3px] h-[0.1rem] bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+                  </button>
+                  
+                </div>
+              </div>
+            </div>
+
+            <!-- Add New Card -->
+            <div class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div
+                class="bg-light rounded-xl shadow-lg overflow-hidden mb-10 hover:scale-105 transition duration-200 dark:hover:shadow-slate-500 dark:bg-dark dark:shadow-slate-600 hover:shadow-xl"
+              >
+                <div class="h-52 overflow-hidden bg-cover relative group">
+                  <img
+                    src="src/img/experience/marketing.jpg"
+                    alt=""
+                    class="w-full h-full absolute group-hover:scale-125 transition-all duration-300"
+                  />
+                </div>
+                <div class="py-8 px-6">
+                  <h3
+                    class="mb-3 font-semibold text-dark text-xl hover:text-primary truncate dark:text-light"
+                  >
+                    Marketing Team
+                  </h3>
+                  <p class="text-base font-medium text-secondary">
+                    Volunteer Marketing Team of Horizon University Indonesia 
+                  </p>
+                  <p class="mb-6 text-base font-medium text-secondary">
+                    (December 2022 - March 2023)
+                  </p>
+                  <button type="submit" name=""
+                    id="modal-open-btn3"
+                    class="relative inline-block group font-medium text-light py-1 px-5 bg-gradient-to-b from-semiDark via-primary to-semiDark hover:from-semiDark2 hover:via-primary hover:to-semiDark2 hover:scale-110 text-sm rounded-md hover:shadow-sm transition duration-100 ease-in-out dark:shadow-slate-600"
+                    >Read More &raquo
+                      <!-- Underline Animation -->
+                    <span class="block -mt-[3px] mb-[3px] h-[0.1rem] bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Add New Card -->
+            <div class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div
+                class="bg-light rounded-xl shadow-lg overflow-hidden mb-10 hover:scale-105 transition duration-200 dark:hover:shadow-slate-500 dark:bg-dark dark:shadow-slate-600 hover:shadow-xl"
+              >
+                <div class="h-52 overflow-hidden bg-cover relative group">
+                  <img
+                    src="src/img/experience/hima.jpg"
+                    alt=""
+                    class="w-full h-full absolute group-hover:scale-125 transition-all duration-300"
+                  />
+                </div>
+                <div class="py-8 px-6">
+                  <h3
+                    class="mb-3 font-semibold text-dark text-xl hover:text-primary truncate dark:text-light"
+                  >
+                    Himpunan Mahasiswa
+                  </h3>
+                  <p class="text-base font-medium text-secondary">
+                    Secretary of Himpunan Mahasiswa Horizon University Indonesia
+                  </p>
+                  <p class="mb-6 text-base font-medium text-secondary">
+                    (August 2023 - August 2024)
+                  </p>
+                  <button type="submit" name=""
+                    id="modal-open-btn4"
+                    class="relative inline-block group font-medium text-light py-1 px-5 bg-gradient-to-b from-semiDark via-primary to-semiDark hover:from-semiDark2 hover:via-primary hover:to-semiDark2 hover:scale-110 text-sm rounded-md hover:shadow-sm transition duration-100 ease-in-out dark:shadow-slate-600"
+                    >Read More &raquo
+                      <!-- Underline Animation -->
+                    <span class="block -mt-[3px] mb-[3px] h-[0.1rem] bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add New Card -->
+            <div class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div
+                class="bg-light rounded-xl shadow-lg overflow-hidden mb-10 hover:scale-105 transition duration-200 dark:hover:shadow-slate-500 dark:bg-dark dark:shadow-slate-600 hover:shadow-xl"
+              >
+                <div class="h-52 overflow-hidden bg-cover relative group">
+                  <img
+                    src="src/img/experience/tpa.jpg"
+                    alt=""
+                    class="w-full h-full absolute group-hover:scale-125 transition-all duration-300"
+                  />
+                </div>
+                <div class="py-8 px-6">
+                  <h3
+                    class="mb-3 font-semibold text-dark text-xl hover:text-primary truncate dark:text-light"
+                  >
+                    TPA/DTA Teacher
+                  </h3>
+                  <p class="text-base font-medium text-secondary">
+                    Teaching TPA/DTA from grades 3 to 6 in the mosque front of my house
+                  </p>
+                  <p class="mb-6 text-base font-medium text-secondary">
+                    (2022 - Now)
+                  </p>
+                  <button type="submit" name=""
+                    id="modal-open-btn5"
+                    class="relative inline-block group font-medium text-light py-1 px-5 bg-gradient-to-b from-semiDark via-primary to-semiDark hover:from-semiDark2 hover:via-primary hover:to-semiDark2 hover:scale-110 text-sm rounded-md hover:shadow-sm transition duration-100 ease-in-out dark:shadow-slate-600"
+                    >Read More &raquo
+                      <!-- Underline Animation -->
+                    <span class="block -mt-[3px] mb-[3px] h-[0.1rem] bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Add New Card -->
+            <div class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div
+                class="bg-light rounded-xl shadow-lg overflow-hidden mb-10 hover:scale-105 transition duration-200 dark:hover:shadow-slate-500 dark:bg-dark dark:shadow-slate-600 hover:shadow-xl"
+              >
+                <div class="h-52 overflow-hidden bg-cover relative group">
+                  <img
+                    src="src/img/experience/karangtaruna.jpeg"
+                    alt=""
+                    class="w-full h-full absolute group-hover:scale-125 transition-all duration-300"
+                  />
+                </div>
+                <div class="py-8 px-6">
+                  <h3
+                    class="mb-3 font-semibold text-dark text-xl hover:text-primary truncate dark:text-light"
+                  >
+                    Karang Taruna
+                  </h3>
+                  <p class="text-base font-medium text-secondary">
+                    Religious Section of Karang Taruna Organization (IRAKARYA)
+                  </p>
+                  <p class="mb-6 text-base font-medium text-secondary">
+                    (2018 - Now)
+                  </p>
+                  <button type="submit" name=""
+                    id="modal-open-btn6"
+                    class="relative inline-block group font-medium text-light py-1 px-5 bg-gradient-to-b from-semiDark via-primary to-semiDark hover:from-semiDark2 hover:via-primary hover:to-semiDark2 hover:scale-110 text-sm rounded-md hover:shadow-sm transition duration-100 ease-in-out dark:shadow-slate-600"
+                    >Read More &raquo
+                      <!-- Underline Animation -->
+                    <span class="block -mt-[3px] mb-[3px] h-[0.1rem] bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add New Card -->
+            <div class="w-full px-4 md:w-1/2 xl:w-1/3">
+              <div
+                class="bg-light rounded-xl shadow-lg overflow-hidden mb-10 hover:scale-105 transition duration-200 dark:hover:shadow-slate-500 dark:bg-dark dark:shadow-slate-600 hover:shadow-xl"
+              >
+                <div class="h-52 overflow-hidden bg-cover relative group">
+                  <img
+                    src="src/img/experience/silat.jpeg"
+                    alt=""
+                    class="w-full h-full absolute group-hover:scale-125 transition-all duration-300"
+                  />
+                </div>
+                <div class="py-8 px-6">
+                  <h3
+                    class="mb-3 font-semibold text-dark text-xl hover:text-primary truncate dark:text-light"
+                  >
+                    Pencak Silat
+                  </h3>
+                  <p class="text-base font-medium text-secondary">
+                    Member of Ikatan Pencak Silat Seluruh Indonesia (IPSI)
+                  </p>
+                  <p class="mb-6 text-base font-medium text-secondary">
+                    (2016 - 2018)
+                  </p>
+                  <button type="submit" name=""
+                    id="modal-open-btn7"
+                    class="relative inline-block group font-medium text-light py-1 px-5 bg-gradient-to-b from-semiDark via-primary to-semiDark hover:from-semiDark2 hover:via-primary hover:to-semiDark2 hover:scale-110 text-sm rounded-md hover:shadow-sm transition duration-100 ease-in-out dark:shadow-slate-600"
+                    >Read More &raquo
+                      <!-- Underline Animation -->
+                    <span class="block -mt-[3px] mb-[3px] h-[0.1rem] bg-light w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Overlay -->
+            <button
+              type="submit"
+              class="fixed left-0 right-0 top-0 bottom-0 bg-black/[.8] z-[9999] text-dark hidden"
+              id="overlay"
+              name=""
+            >
+              <!-- Modal Box -->
+              <div
+                class="animate-fade relative max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl self-center mx-auto bg-light text-left p-5 rounded-lg shadow-lg shadow-slate-600 dark:bg-dark"
+                id="modal-box"
+              >
+              <!-- Close Button -->
+                <svg width="512" height="512" viewBox="0 0 512 512" style="color:currentColor" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 cursor-pointer absolute right-1 top-1 group" id="modal-close-btn"><rect width="512" height="512" x="0" y="0" rx="30" fill="transparent" stroke="transparent" stroke-width="0" stroke-opacity="100%" paint-order="stroke"></rect>
+                  <svg width="256px" height="256px" viewBox="0 0 1024 1024" fill="currentColor" x="128" y="128" role="img" style="display:inline-block;vertical-align:middle" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor" class="dark:text-light group-hover:text-primary group-hover:dark:text-primary"><path fill="currentColor" fill-rule="evenodd" d="M880 112c17.7 0 32 14.3 32 32v736c0 17.7-14.3 32-32 32H144c-17.7 0-32-14.3-32-32V144c0-17.7 14.3-32 32-32Zm-40 72H184v656h656V184ZM640.013 338.826c.023.007.042.018.083.059l45.02 45.019c.04.04.05.06.058.083a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082L557.254 512l127.861 127.862a.268.268 0 0 1 .05.06l.009.023a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082l-45.019 45.02c-.04.04-.06.05-.083.058a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059L512 557.254L384.14 685.115c-.042.041-.06.052-.084.059a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059l-45.02-45.019a.199.199 0 0 1-.058-.083a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082L466.745 512l-127.86-127.86a.268.268 0 0 1-.05-.061l-.009-.023a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082l45.019-45.02c.04-.04.06-.05.083-.058a.118.118 0 0 1 .07 0c.022.007.041.018.082.059L512 466.745l127.862-127.86c.04-.041.06-.052.083-.059a.118.118 0 0 1 .07 0Z"/></g></svg></svg>
+                <h3 class="text-2xl font-bold mb-[0.2rem] text-dark hover:text-primary dark:text-primary dark:hover:text-light max-w-xs">
+                  PT. Pindo Deli Pulp & Paper
+                </h3>
+                <p class="text-base font-light mb-1 dark:text-white">
+                  Internship - HR & Mills Service Department
+                </p>
+                <p class="text-sm font-light mb-6 dark:text-white">
+                  May 2024 - July 2024 | 2 Months
+                </p>
+                <h4 class="text-lg font-semibold mb-2 text-dark hover:text-primary dark:text-primary max-w-[5rem] dark:hover:text-light">Details</h4>
+
+                <!-- Details Table -->
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <table class="w-full text-sm text-left rtl:text-right text-light dark:text-light">
+                      <thead class="text-xs text-white uppercase bg-secondary border-b border-dark dark:text-white">
+                          <tr>
+                            <th scope="col" class="px-4 py-3">
+                                No.
+                            </th>
+                              <th scope="col" class="px-4 py-3 text-center">
+                                  Activities
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                1. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Team Building: Planning events, games, and being a coordinator for IKK employees candidate (Indah Kiat Karawang) 
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                2. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Manage students files who will register for internships at PT. Pindo Deli
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                3. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Create flyer and banner designs, also create Post Test for workshops and seminars
+                              </th>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                </p>
+              </div>
+              <!-- End Modal Box -->
+
+              <!-- Modal Box2 -->
+              <div
+                class="animate-fade relative max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl self-center mx-auto bg-light text-left p-5 rounded-lg shadow-lg shadow-slate-600 dark:bg-dark"
+                id="modal-box2"
+              >
+              <!-- Close Button -->
+                <svg width="512" height="512" viewBox="0 0 512 512" style="color:currentColor" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 cursor-pointer absolute right-1 top-1 group" id="modal-close-btn2"><rect width="512" height="512" x="0" y="0" rx="30" fill="transparent" stroke="transparent" stroke-width="0" stroke-opacity="100%" paint-order="stroke"></rect>
+                  <svg width="256px" height="256px" viewBox="0 0 1024 1024" fill="currentColor" x="128" y="128" role="img" style="display:inline-block;vertical-align:middle" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor" class="dark:text-light group-hover:text-primary group-hover:dark:text-primary"><path fill="currentColor" fill-rule="evenodd" d="M880 112c17.7 0 32 14.3 32 32v736c0 17.7-14.3 32-32 32H144c-17.7 0-32-14.3-32-32V144c0-17.7 14.3-32 32-32Zm-40 72H184v656h656V184ZM640.013 338.826c.023.007.042.018.083.059l45.02 45.019c.04.04.05.06.058.083a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082L557.254 512l127.861 127.862a.268.268 0 0 1 .05.06l.009.023a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082l-45.019 45.02c-.04.04-.06.05-.083.058a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059L512 557.254L384.14 685.115c-.042.041-.06.052-.084.059a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059l-45.02-45.019a.199.199 0 0 1-.058-.083a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082L466.745 512l-127.86-127.86a.268.268 0 0 1-.05-.061l-.009-.023a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082l45.019-45.02c.04-.04.06-.05.083-.058a.118.118 0 0 1 .07 0c.022.007.041.018.082.059L512 466.745l127.862-127.86c.04-.041.06-.052.083-.059a.118.118 0 0 1 .07 0Z"/></g></svg></svg>
+                <h3 class="text-2xl font-bold mb-[0.2rem] text-dark hover:text-primary dark:text-primary dark:hover:text-light max-w-xs">
+                  PT. DIC Graphics
+                </h3>
+                <p class="text-base font-light mb-1 dark:text-white">
+                  Internship - Health, Safety, and Environment (HSE) Department
+                </p>
+                <p class="text-sm font-light mb-6 dark:text-white">
+                  January 2024 - April 2024 | 3 Months
+                </p>
+                <h4 class="text-lg font-semibold mb-2 text-dark hover:text-primary dark:text-primary max-w-[5rem] dark:hover:text-light">Details</h4>
+
+                <!-- Details Table -->
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <table class="w-full text-sm text-left rtl:text-right text-light dark:text-light">
+                      <thead class="text-xs text-white uppercase bg-secondary border-b border-dark dark:text-white">
+                          <tr>
+                            <th scope="col" class="px-4 py-3">
+                                No.
+                            </th>
+                              <th scope="col" class="px-4 py-3 text-center">
+                                  Activities
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                1. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Manage B3 Waste Festronik data on the SIMPEL KLHK website (Sistem Informasi Pelaporan Elektronik Kementrian Lingkungan Hidup dan Kehutanan)                                
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                2. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Record and manage Work Permit files for period 2022 – 2024 into Microsoft Excel
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                3. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Preparing all files that will be needed during meetings and audits
+                              </th>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                </p>
+              </div>
+              <!-- End Modal Box2 -->
+
+              <!-- Modal Box3 -->
+              <div
+                class="animate-fade relative max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl self-center mx-auto bg-light text-left p-5 rounded-lg shadow-lg shadow-slate-600 dark:bg-dark"
+                id="modal-box3"
+              >
+              <!-- Close Button -->
+                <svg width="512" height="512" viewBox="0 0 512 512" style="color:currentColor" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 cursor-pointer absolute right-1 top-1 group" id="modal-close-btn3"><rect width="512" height="512" x="0" y="0" rx="30" fill="transparent" stroke="transparent" stroke-width="0" stroke-opacity="100%" paint-order="stroke"></rect>
+                  <svg width="256px" height="256px" viewBox="0 0 1024 1024" fill="currentColor" x="128" y="128" role="img" style="display:inline-block;vertical-align:middle" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor" class="dark:text-light group-hover:text-primary group-hover:dark:text-primary"><path fill="currentColor" fill-rule="evenodd" d="M880 112c17.7 0 32 14.3 32 32v736c0 17.7-14.3 32-32 32H144c-17.7 0-32-14.3-32-32V144c0-17.7 14.3-32 32-32Zm-40 72H184v656h656V184ZM640.013 338.826c.023.007.042.018.083.059l45.02 45.019c.04.04.05.06.058.083a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082L557.254 512l127.861 127.862a.268.268 0 0 1 .05.06l.009.023a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082l-45.019 45.02c-.04.04-.06.05-.083.058a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059L512 557.254L384.14 685.115c-.042.041-.06.052-.084.059a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059l-45.02-45.019a.199.199 0 0 1-.058-.083a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082L466.745 512l-127.86-127.86a.268.268 0 0 1-.05-.061l-.009-.023a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082l45.019-45.02c.04-.04.06-.05.083-.058a.118.118 0 0 1 .07 0c.022.007.041.018.082.059L512 466.745l127.862-127.86c.04-.041.06-.052.083-.059a.118.118 0 0 1 .07 0Z"/></g></svg></svg>
+                <h3 class="text-2xl font-bold mb-[0.2rem] text-dark hover:text-primary dark:text-primary dark:hover:text-light max-w-xs">
+                  Marketing Team
+                </h3>
+                <p class="text-base font-light mb-1 dark:text-white">
+                  Volunteer - Horizon University Indonesia
+                </p>
+                <p class="text-sm font-light mb-6 dark:text-white">
+                  December 2022 - March 2023 | 3 Months
+                </p>
+                <h4 class="text-lg font-semibold mb-2 text-dark hover:text-primary dark:text-primary max-w-[5rem] dark:hover:text-light">Details</h4>
+
+                <!-- Details Table -->
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <table class="w-full text-sm text-left rtl:text-right text-light dark:text-light">
+                      <thead class="text-xs text-white uppercase bg-secondary border-b border-dark dark:text-white">
+                          <tr>
+                            <th scope="col" class="px-4 py-3">
+                                No.
+                            </th>
+                              <th scope="col" class="px-4 py-3 text-center">
+                                  Activities
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                1. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                School Visits to each high school/vocational school around Karawang for campus socialization
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                2. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Assist the Marketing Team in creating events on campus for promotional needs
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                3. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Become a Tour Guide for high school/vocational school students who come to campus to do a campus tour
+                              </th>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                </p>
+              </div>
+              <!-- End Modal Box3 -->
+
+              <!-- Modal Box4 -->
+              <div
+                class="animate-fade relative max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl self-center mx-auto bg-light text-left p-5 rounded-lg shadow-lg shadow-slate-600 dark:bg-dark"
+                id="modal-box4"
+              >
+              <!-- Close Button -->
+                <svg width="512" height="512" viewBox="0 0 512 512" style="color:currentColor" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 cursor-pointer absolute right-1 top-1 group" id="modal-close-btn4"><rect width="512" height="512" x="0" y="0" rx="30" fill="transparent" stroke="transparent" stroke-width="0" stroke-opacity="100%" paint-order="stroke"></rect>
+                  <svg width="256px" height="256px" viewBox="0 0 1024 1024" fill="currentColor" x="128" y="128" role="img" style="display:inline-block;vertical-align:middle" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor" class="dark:text-light group-hover:text-primary group-hover:dark:text-primary"><path fill="currentColor" fill-rule="evenodd" d="M880 112c17.7 0 32 14.3 32 32v736c0 17.7-14.3 32-32 32H144c-17.7 0-32-14.3-32-32V144c0-17.7 14.3-32 32-32Zm-40 72H184v656h656V184ZM640.013 338.826c.023.007.042.018.083.059l45.02 45.019c.04.04.05.06.058.083a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082L557.254 512l127.861 127.862a.268.268 0 0 1 .05.06l.009.023a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082l-45.019 45.02c-.04.04-.06.05-.083.058a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059L512 557.254L384.14 685.115c-.042.041-.06.052-.084.059a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059l-45.02-45.019a.199.199 0 0 1-.058-.083a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082L466.745 512l-127.86-127.86a.268.268 0 0 1-.05-.061l-.009-.023a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082l45.019-45.02c.04-.04.06-.05.083-.058a.118.118 0 0 1 .07 0c.022.007.041.018.082.059L512 466.745l127.862-127.86c.04-.041.06-.052.083-.059a.118.118 0 0 1 .07 0Z"/></g></svg></svg>
+                <h3 class="text-2xl font-bold mb-[0.2rem] text-dark hover:text-primary dark:text-primary dark:hover:text-light max-w-xs">
+                  Himpunan Mahasiswa
+                </h3>
+                <p class="text-base font-light mb-1 dark:text-white">
+                  Secretary - Horizon University Indonesia
+                </p>
+                <p class="text-sm font-light mb-6 dark:text-white">
+                  August 2023 - August 2024 | 1 Year
+                </p>
+                <h4 class="text-lg font-semibold mb-2 text-dark hover:text-primary dark:text-primary max-w-[5rem] dark:hover:text-light">Details</h4>
+
+                <!-- Details Table -->
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <table class="w-full text-sm text-left rtl:text-right text-light dark:text-light">
+                      <thead class="text-xs text-white uppercase bg-secondary border-b border-dark dark:text-white">
+                          <tr>
+                            <th scope="col" class="px-4 py-3">
+                                No.
+                            </th>
+                              <th scope="col" class="px-4 py-3 text-center">
+                                  Activities
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                1. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Mengelola laporan proposal kegiatan internal/eksternal serta event kampus
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                2. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Koordinasi bersama ketua dan pengurus himpunan dalam perancangan event
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                3. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Notulensi hasil rapat serta pelaporan evaluasi event  
+                              </th>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                </p>
+              </div>
+              <!-- End Modal Box4 -->
+
+              <!-- Modal Box5 -->
+              <div
+                class="animate-fade relative max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl self-center mx-auto bg-light text-left p-5 rounded-lg shadow-lg shadow-slate-600 dark:bg-dark"
+                id="modal-box5"
+              >
+              <!-- Close Button -->
+                <svg width="512" height="512" viewBox="0 0 512 512" style="color:currentColor" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 cursor-pointer absolute right-1 top-1 group" id="modal-close-btn5"><rect width="512" height="512" x="0" y="0" rx="30" fill="transparent" stroke="transparent" stroke-width="0" stroke-opacity="100%" paint-order="stroke"></rect>
+                  <svg width="256px" height="256px" viewBox="0 0 1024 1024" fill="currentColor" x="128" y="128" role="img" style="display:inline-block;vertical-align:middle" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor" class="dark:text-light group-hover:text-primary group-hover:dark:text-primary"><path fill="currentColor" fill-rule="evenodd" d="M880 112c17.7 0 32 14.3 32 32v736c0 17.7-14.3 32-32 32H144c-17.7 0-32-14.3-32-32V144c0-17.7 14.3-32 32-32Zm-40 72H184v656h656V184ZM640.013 338.826c.023.007.042.018.083.059l45.02 45.019c.04.04.05.06.058.083a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082L557.254 512l127.861 127.862a.268.268 0 0 1 .05.06l.009.023a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082l-45.019 45.02c-.04.04-.06.05-.083.058a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059L512 557.254L384.14 685.115c-.042.041-.06.052-.084.059a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059l-45.02-45.019a.199.199 0 0 1-.058-.083a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082L466.745 512l-127.86-127.86a.268.268 0 0 1-.05-.061l-.009-.023a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082l45.019-45.02c.04-.04.06-.05.083-.058a.118.118 0 0 1 .07 0c.022.007.041.018.082.059L512 466.745l127.862-127.86c.04-.041.06-.052.083-.059a.118.118 0 0 1 .07 0Z"/></g></svg></svg>
+                <h3 class="text-2xl font-bold mb-[0.2rem] text-dark hover:text-primary dark:text-primary dark:hover:text-light max-w-xs">
+                  TPA/DTA Teacher
+                </h3>
+                <p class="text-base font-light mb-1 dark:text-white">
+                  Part time - TPA/DTA Al-Badruddin
+                </p>
+                <p class="text-sm font-light mb-6 dark:text-white">
+                  2018 - Now | Present
+                </p>
+                <h4 class="text-lg font-semibold mb-2 text-dark hover:text-primary dark:text-primary max-w-[5rem] dark:hover:text-light">Details</h4>
+
+                <!-- Details Table -->
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <table class="w-full text-sm text-left rtl:text-right text-light dark:text-light">
+                      <thead class="text-xs text-white uppercase bg-secondary border-b border-dark dark:text-white">
+                          <tr>
+                            <th scope="col" class="px-4 py-3">
+                                No.
+                            </th>
+                              <th scope="col" class="px-4 py-3 text-center">
+                                  Activities
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                1. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Teaches how to pray and how to recite the Qur'an correctly 
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                2. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                As a judge for the short letters memorizing in the Qur'an and Adzan competition
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                3. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Input attendance data and student report cards
+                              </th>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                </p>
+              </div>
+              <!-- End Modal Box5 -->
+
+              <!-- Modal Box6 -->
+              <div
+                class="animate-fade relative max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl self-center mx-auto bg-light text-left p-5 rounded-lg shadow-lg shadow-slate-600 dark:bg-dark"
+                id="modal-box6"
+              >
+              <!-- Close Button -->
+                <svg width="512" height="512" viewBox="0 0 512 512" style="color:currentColor" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 cursor-pointer absolute right-1 top-1 group" id="modal-close-btn6"><rect width="512" height="512" x="0" y="0" rx="30" fill="transparent" stroke="transparent" stroke-width="0" stroke-opacity="100%" paint-order="stroke"></rect>
+                  <svg width="256px" height="256px" viewBox="0 0 1024 1024" fill="currentColor" x="128" y="128" role="img" style="display:inline-block;vertical-align:middle" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor" class="dark:text-light group-hover:text-primary group-hover:dark:text-primary"><path fill="currentColor" fill-rule="evenodd" d="M880 112c17.7 0 32 14.3 32 32v736c0 17.7-14.3 32-32 32H144c-17.7 0-32-14.3-32-32V144c0-17.7 14.3-32 32-32Zm-40 72H184v656h656V184ZM640.013 338.826c.023.007.042.018.083.059l45.02 45.019c.04.04.05.06.058.083a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082L557.254 512l127.861 127.862a.268.268 0 0 1 .05.06l.009.023a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082l-45.019 45.02c-.04.04-.06.05-.083.058a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059L512 557.254L384.14 685.115c-.042.041-.06.052-.084.059a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059l-45.02-45.019a.199.199 0 0 1-.058-.083a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082L466.745 512l-127.86-127.86a.268.268 0 0 1-.05-.061l-.009-.023a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082l45.019-45.02c.04-.04.06-.05.083-.058a.118.118 0 0 1 .07 0c.022.007.041.018.082.059L512 466.745l127.862-127.86c.04-.041.06-.052.083-.059a.118.118 0 0 1 .07 0Z"/></g></svg></svg>
+                <h3 class="text-2xl font-bold mb-[0.2rem] text-dark hover:text-primary dark:text-primary dark:hover:text-light max-w-xs">
+                  Karang Taruna
+                </h3>
+                <p class="text-base font-light mb-1 dark:text-white">
+                  Religion Section - Ikatan Remaja Mekar Jaya (IRAKARYA)
+                </p>
+                <p class="text-sm font-light mb-6 dark:text-white">
+                  2018 - Now | Present
+                </p>
+                <h4 class="text-lg font-semibold mb-2 text-dark hover:text-primary dark:text-primary max-w-[5rem] dark:hover:text-light">Details</h4>
+
+                <!-- Details Table -->
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <table class="w-full text-sm text-left rtl:text-right text-light dark:text-light">
+                      <thead class="text-xs text-white uppercase bg-secondary border-b border-dark dark:text-white">
+                          <tr>
+                            <th scope="col" class="px-4 py-3">
+                                No.
+                            </th>
+                              <th scope="col" class="px-4 py-3 text-center">
+                                  Activities
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                1. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Participate in marawis dan hadroh activities
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                2. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Event committee such as Independence Day, MABIT (Malam Bina Iman dan Takwa), torchlight parade, etc
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                3. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Participate in community service activities, breaking fast together, and others
+                              </th>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                </p>
+              </div>
+              <!-- End Modal Box6 -->
+
+              <!-- Modal Box7 -->
+              <div
+                class="animate-fade relative max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl self-center mx-auto bg-light text-left p-5 rounded-lg shadow-lg shadow-slate-600 dark:bg-dark"
+                id="modal-box7"
+              >
+              <!-- Close Button -->
+                <svg width="512" height="512" viewBox="0 0 512 512" style="color:currentColor" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 cursor-pointer absolute right-1 top-1 group" id="modal-close-btn7"><rect width="512" height="512" x="0" y="0" rx="30" fill="transparent" stroke="transparent" stroke-width="0" stroke-opacity="100%" paint-order="stroke"></rect>
+                  <svg width="256px" height="256px" viewBox="0 0 1024 1024" fill="currentColor" x="128" y="128" role="img" style="display:inline-block;vertical-align:middle" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor" class="dark:text-light group-hover:text-primary group-hover:dark:text-primary"><path fill="currentColor" fill-rule="evenodd" d="M880 112c17.7 0 32 14.3 32 32v736c0 17.7-14.3 32-32 32H144c-17.7 0-32-14.3-32-32V144c0-17.7 14.3-32 32-32Zm-40 72H184v656h656V184ZM640.013 338.826c.023.007.042.018.083.059l45.02 45.019c.04.04.05.06.058.083a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082L557.254 512l127.861 127.862a.268.268 0 0 1 .05.06l.009.023a.118.118 0 0 1 0 .07c-.007.022-.018.041-.059.082l-45.019 45.02c-.04.04-.06.05-.083.058a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059L512 557.254L384.14 685.115c-.042.041-.06.052-.084.059a.118.118 0 0 1-.07 0c-.022-.007-.041-.018-.082-.059l-45.02-45.019a.199.199 0 0 1-.058-.083a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082L466.745 512l-127.86-127.86a.268.268 0 0 1-.05-.061l-.009-.023a.118.118 0 0 1 0-.07c.007-.022.018-.041.059-.082l45.019-45.02c.04-.04.06-.05.083-.058a.118.118 0 0 1 .07 0c.022.007.041.018.082.059L512 466.745l127.862-127.86c.04-.041.06-.052.083-.059a.118.118 0 0 1 .07 0Z"/></g></svg></svg>
+                <h3 class="text-2xl font-bold mb-[0.2rem] text-dark hover:text-primary dark:text-primary dark:hover:text-light max-w-xs">
+                  Pencak Silat
+                </h3>
+                <p class="text-base font-light mb-1 dark:text-white">
+                  Member - Ikatan Pencak Silat Seluruh Indonesia (IPSI)
+                </p>
+                <p class="text-sm font-light mb-6 dark:text-white">
+                  2016 - 2018 | 2 Year
+                </p>
+                <h4 class="text-lg font-semibold mb-2 text-dark hover:text-primary dark:text-primary max-w-[5rem] dark:hover:text-light">Details</h4>
+
+                <!-- Details Table -->
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <table class="w-full text-sm text-left rtl:text-right text-light dark:text-light">
+                      <thead class="text-xs text-white uppercase bg-secondary border-b border-dark dark:text-white">
+                          <tr>
+                            <th scope="col" class="px-4 py-3">
+                                No.
+                            </th>
+                              <th scope="col" class="px-4 py-3 text-center">
+                                  Activities
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                1. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Participated in the MURI record of 3000 pesilat at the Patriot Chandrabhaga Stadium, Bekasi City 
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                2. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Learn the Tunggal Baku IPSI moves (empty hand, machete, and stick)
+                              </th>
+                          </tr>
+                          <tr class="bg-secondary border-b border-dark hover:bg-slate-400">
+                            <td class="px-4 py-4">
+                                3. 
+                            </td>
+                              <th scope="row" class="px-4 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                                Train juniors in learning the Tunggal Baku IPSI moves
+                              </th>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                </p>
+              </div>
+              <!-- End Modal Box6 -->
+
+            </button>
+            <!-- End Overlay -->
+      
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Experience Section End -->
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="pt-36 pb-20 bg-slate-100 dark:bg-slate-800">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
+            <h2 class="font-bold text-dark text-3xl mb-4 dark:text-light">
+              Contact Me
+            </h2>
+            <p class="font-medium text-md text-secondary">
+              If there's something you want to tell me, you can feel free
+              send message throught form bellow. I'll be glad to get
+              feedback from you!
+            </p>
+          </div>
+        </div>
+
+        <form action="" name="muhfajar-form" id="comment-form">
+          <div class="w-full lg:w-2/3 mx-auto">
+            <div class="w-full px-4 mb-8">
+              <label for="name" class="text-base font-bold text-primary"
+                >Name :</label
+              >
+              <div class="w-full hover:shadow-md hover:shadow-silver shadow-sm shadow-silver bg-gradient-to-r bg-[size:300%] from-orange-500 via-primary to-blue-600 rounded-md p-[0.18rem] animate-gradientAnimate">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="example: Muhammad Fajar"
+                  required
+                  class="w-full bg-light dark:bg-slate-300 text-dark p-2 rounded-md focus:outline-none focus:ring-black focus:ring-[0.08rem] focus:border-black"
+                />
+              </div>
+            </div>
+
+            <div class="w-full px-4 mb-8">
+              <label for="email" class="text-base font-bold text-primary"
+                >Email :</label
+              >
+              <div class="w-full hover:shadow-md hover:shadow-silver shadow-sm shadow-silver bg-gradient-to-r bg-[size:300%] from-orange-500 via-primary to-blue-600 rounded-md p-[0.18rem] animate-gradientAnimate">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="example: muhfajar@gmail.com"
+                  required
+                  class="w-full bg-light dark:bg-slate-300 text-dark p-2 rounded-md focus:outline-none focus:ring-black focus:ring-[0.08rem] focus:border-black"
+                />
+              </div>
+            </div>
+            <div class="w-full px-4 mb-8">
+              <label for="comment" class="text-base font-bold text-primary"
+                >Comment :</label
+              >
+              <div class="w-full hover:shadow-md hover:shadow-silver shadow-sm shadow-silver bg-gradient-to-r bg-[size:300%] from-orange-500 via-primary to-blue-600 rounded-md px-[0.18rem] pt-[0.18rem] pb-0 animate-gradientAnimate">
+                <textarea
+                  name="comment"
+                  id="comment"
+                  placeholder="Write your message here... "
+                  required
+                  class="w-full bg-light dark:bg-slate-300 text-dark p-2 rounded-md focus:outline-none focus:ring-black focus:ring-[0.08rem] focus:border-black h-32"
+                ></textarea>
+              </div>
+            </div>
+            <div class="w-full px-4 mb-8">
+              <button
+                type="submit"
+                id="btn-submit"
+                class="text-base hover:shadow-md hover:shadow-silver font-semibold text-light bg bg-gradient-to-b from-semiDark via-primary to-semiDark hover:from-semiDark2 hover:via-primary hover:to-semiDark2 rounded-full w-full py-2 px-8 transition-all dark:shadow-slate-600"
+              >
+                Submit
+              </button>
+            </div>
+
+            <div class="relative w-full flex justify-center">
+              <!-- Spinner Loading -->
+              <div id="btn-loading" class="hidden absolute top-0 w-12 h-12 rounded-full animate-spin cursor-wait border-4 border-dashed border-primary border-t-transparent"></div>
+
+              <!-- Alert -->
+              <div id="alert" class="hidden w-full absolute items-center p-4 text-light rounded-lg bg-blue-500 dark:bg-blue-500 dark:text-dark" role="alert">
+                <div class="ms-3 text-sm font-medium">
+                  <a href="#" class="font-bold">Thank You!</a> Your feedback has been sent to Fajar successfully
+                </div>
+                <button type="submit" id="btn-close-alert" class="ms-auto -mx-1.5 -my-1.5 bg-light text-dark rounded-lg focus:ring-2 focus:ring-dark p-1.5 hover:bg-primary inline-flex items-center justify-center h-8 w-8 dark:bg-slate-800 dark:text-light dark:hover:bg-primary dark:focus:ring-slate-200" data-dismiss-target="#alert-3" aria-label="Close">
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                  </svg>
+                </button>
+              </div>
+              <!-- End Alert -->
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Start -->
+    <footer class="bg-dark pt-6 pb-3">
+        <div class="flex flex-wrap">
+          <p class="font-medium text-xs text-light mx-auto mb-5">
+            Created with <span class="inline-block hover:scale-150 transition duration-300">❤️</span> by Muhammad <span class="text-primary hover:text-light">Fajar</span> Ramadhan
+          </p>
+          <!-- Sosmed -->
+          <div class="w-full">
+            <div class="flex items-center justify-center mb-6">
+              <!-- LinkedIn -->
+              <a
+                href="https://www.linkedin.com/in/muhammad-fajar-ramadhan-908aa2278?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                class="w-9 h-9 flex justify-center items-center rounded-full mr-3 text-secondary border border-x-primary border-y-light hover:border-light hover:text-white hover:bg-primary"
+                target="_blank"
+              >
+                <svg
+                  class="fill-current"
+                  width="20"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>LinkedIn</title>
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+              <!-- Instagram -->
+              <a
+                href="https://instagram.com/mfajarr25"
+                class="w-9 h-9 flex justify-center items-center rounded-full mr-3 text-secondary border border-x-primary border-y-light hover:border-light hover:text-white hover:bg-primary"
+                target="_blank"
+              >
+                <svg
+                  class="fill-current"
+                  width="20"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Instagram</title>
+                  <path
+                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"
+                  />
+                </svg>
+              </a>
+              <!-- Facebook -->
+              <a
+                href="https://www.facebook.com/kim.ara.moon.75248?mibextid=ZbWKwL"
+                class="w-9 h-9 flex justify-center items-center rounded-full mr-3 text-secondary border border-x-primary border-y-light hover:border-light hover:text-white hover:bg-primary"
+                target="_blank"
+              >
+                <svg
+                  class="fill-current"
+                  width="20"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                <title>Facebook</title>
+                <path
+                d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"
+                  />
+                </svg>
+              </a>
+              <!-- WhatsApp -->
+              <a
+                href="http://wa.me/62895333530959"
+                class="w-9 h-9 flex justify-center items-center rounded-full mr-3 text-secondary border border-x-primary border-y-light hover:border-light hover:text-white hover:bg-primary"
+                target="_blank"
+              >
+                <svg
+                  class="fill-current"
+                  width="20"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>WhatsApp</title>
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  />
+                </svg>
+              </a>
+              <!-- Gmail -->
+              <a
+                href="mailto:mfajarramadhan04@gmail.com/"
+                class="w-9 h-9 flex justify-center items-center rounded-full mr-3 text-secondary border border-x-primary border-y-light hover:border-light hover:text-white hover:bg-primary"
+                target="_blank"
+              >
+                <svg
+                  class="fill-current"
+                  width="20"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Gmail</title>
+                  <path
+                    d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                  />
+                </svg>
+              </a>
+              <!-- Github -->
+              <a
+                href="https://github.com/mfajarramadhan"
+                class="w-9 h-9 flex justify-center items-center rounded-full mr-3 text-secondary border border-x-primary border-y-light hover:border-light hover:text-white hover:bg-primary"
+                target="_blank"
+              >
+                <svg
+                  class="fill-current"
+                  width="20"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>GitHub</title>
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="w-full flex justify-center border-t border-slate-700">
+            <p class="mx-auto font-medium text-xs text-slate-500 mt-3">
+              @ 2024 Muh_Fajar | All Rights Reserved
+            </p>
+        </div>
+          
+        </div>
+      
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Back to Top Start -->
+    <a
+      href="#home"
+      id="to-top"
+      class="fixed hidden justify-center items-center bottom-4 right-4 z-[99] h-12 w-12 rounded-full bg-gradient-to-b from-semiDark via-primary to-semiDark opacity-50 transition duration-100 hover:opacity-90 hover:shadow-md group"
+    >
+      <span
+        class="block w-5 h-5 border-t-2 border-l-2 rotate-45 mt-2 group-hover:border-light"
+      ></span>
+    </a>
+    <!-- Back to Top End -->
+
+    <script src="src/js/script.js"></script>
+  </body>
+</html>
