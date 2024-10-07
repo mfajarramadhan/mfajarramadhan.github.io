@@ -32,3 +32,25 @@ body {
   @apply translate-x-3;
 }
 /* cara bacanya: cari elemen dengan class hamburger-active, lalu cari elemen didalamnya berupa span anak ke-x  */
+
+@layer components {
+  .nav-link {
+    @apply w-full px-8 py-2 text-base hover:bg-gradient-to-b from-semiDark via-primary to-semiDark text-dark dark:text-light;
+  }
+
+  .btn {
+    @apply px-5 py-2 text-base font-medium transition duration-200 ease-in-out rounded-full bg-gradient-to-b from-semiDark via-primary to-semiDark hover:from-semiDark2 hover:via-primary hover:to-semiDark2 hover:shadow-md hover:shadow-silver hover:scale-110 dark:shadow-slate-600 text-light;
+  }
+
+  .modal-box {
+    @apply relative self-center max-w-xs p-5 mx-auto text-left rounded-lg shadow-lg animate-fade sm:max-w-md md:max-w-2xl lg:max-w-4xl bg-light shadow-slate-600 dark:bg-dark;
+  }
+
+  .project-card {
+    @apply overflow-hidden transition duration-300 rounded-md shadow-lg cursor-pointer shadow-silver dark:shadow-slate-600 dark:hover:shadow-slate-400 md:h-32 lg:h-60 hover:scale-105;
+  }
+
+  .experience-card {
+    @apply mb-10 overflow-hidden transition duration-200 shadow-lg bg-light rounded-xl hover:scale-105 dark:hover:shadow-slate-500 dark:bg-dark dark:shadow-slate-600;
+  }
+}
