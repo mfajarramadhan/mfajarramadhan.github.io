@@ -231,7 +231,7 @@ form.addEventListener("submit", (e) => {
   btnSubmit.classList.remove("cursor-pointer");
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
-      // Tampilkan button loading, Not Allowed button submit
+      // Hilangkan button loading, Allowed button submit
       btnLoading.classList.toggle("hidden");
       btnSubmit.classList.toggle("cursor-not-allowed");
       btnSubmit.classList.add("cursor-pointer");
